@@ -1,4 +1,4 @@
-﻿namespace BookstoreLibrary
+﻿namespace BookstoreLibrary.Models
 {
     public class UserModel
     {
