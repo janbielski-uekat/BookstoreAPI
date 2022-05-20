@@ -1,8 +1,14 @@
+using BookstoreAPI;
+using BookstoreLibrary.DataAccess;
+using DataAccess.DbAccess;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+builder.Services.AddSingleton<IUserData, UserData>();
 
 var app = builder.Build();
 
@@ -13,5 +19,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.ConfigureApi();
 
 app.Run();

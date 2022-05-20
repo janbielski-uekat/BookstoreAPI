@@ -2,7 +2,7 @@
 	@Id int
 AS
 begin
-	select Id, FirstName, LastName
+	select Id, FirstName, LastName, EmailAddress, CreatedDate
 	from dbo.[User]
 	where Id = @Id;
 end
