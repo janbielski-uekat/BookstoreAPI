@@ -67,6 +67,12 @@
     <Build Include="dbo\StoredProcedures\spUser_Delete.sql" />
     <Build Include="dbo\StoredProcedures\spUser_Insert.sql" />
     <Build Include="dbo\StoredProcedures\spUser_Update.sql" />
+    <Build Include="dbo\Tables\Product.sql" />
+    <Build Include="dbo\StoredProcedures\spProduct_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spProduct_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spProduct_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spProduct_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\spProduct_Update.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\Script.PostDeployment.sql" />
