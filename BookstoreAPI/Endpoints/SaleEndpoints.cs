@@ -37,14 +37,17 @@ public static class SaleEndpoints
         }
     }
 
-    private static async Task<IResult> InsertSale(SaleModel sale, ISaleData saleData, IProductData productData)
+    private static async Task<IResult> InsertSale(SaleBasicModel sale, ISaleData saleData, IProductData productData)
     {
         try
         {
             var productBought = await productData.GetProduct(sale.ProductId);
             productBought.QuantityInStock = productBought.QuantityInStock - sale.Quantity;
+
+            SaleModel saleDetail = new SaleModel(sale.ProductId, sale.Quantity, productBought.RetailPrice, sale.Quantity * productBought.RetailPrice, DateTime.UtcNow);
+
             await productData.UpdateProduct(productBought);
-            await saleData.InsertSale(sale);
+            await saleData.InsertSale(saleDetail);
             return Results.Ok();
         }
         catch (Exception ex)

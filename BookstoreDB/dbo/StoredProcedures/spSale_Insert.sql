@@ -3,7 +3,7 @@
 	@Quantity int,
 	@PurchasePrice money,
 	@Total money,
-	@SaleDate datetime2
+	@SaleDate datetime2 = getutcdate
 AS
 begin
 	insert into dbo.[Sale] (ProductId, Quantity, PurchasePrice, Total, SaleDate)
