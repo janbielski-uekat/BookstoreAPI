@@ -2,7 +2,7 @@
 	@Id int
 AS
 begin
-	select Id, ProductName, [Description], RetailPrice, QuantityInStock
+	select Id, ProductName, [Description], Author, ISBN, RetailPrice, QuantityInStock
 	from dbo.[Product]
 	where Id = @Id;
 end

@@ -21,7 +21,7 @@ public class ProductData : IProductData
     }
 
     public Task InsertProduct(ProductModel product) =>
-        _db.SaveData("dbo.spProduct_Insert", new { product.ProductName, product.Description, product.RetailPrice, product.QuantityInStock });
+        _db.SaveData("dbo.spProduct_Insert", new { product.ProductName, product.Description, product.Author, product.ISBN, product.RetailPrice, product.QuantityInStock });
 
     public Task UpdateProduct(ProductModel product) =>
         _db.SaveData("dbo.spProduct_Update", product);
