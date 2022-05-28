@@ -10,6 +10,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 builder.Services.AddSingleton<IUserData, UserData>();
 builder.Services.AddSingleton<IProductData, ProductData>();
+builder.Services.AddSingleton<ISaleData, SaleData>();
 
 var app = builder.Build();
 

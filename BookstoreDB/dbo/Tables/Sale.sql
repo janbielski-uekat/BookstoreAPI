@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Sale]
 (
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
     [ProductId] INT NOT NULL, 
     [Quantity] INT NOT NULL, 
     [PurchasePrice] MONEY NOT NULL, 
