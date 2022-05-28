@@ -42,6 +42,7 @@ public static class SaleEndpoints
         try
         {
             var productBought = await productData.GetProduct(sale.ProductId);
+            if(productBought == null) return Results.NotFound();
             productBought.QuantityInStock = productBought.QuantityInStock - sale.Quantity;
 
             SaleModel saleDetail = new SaleModel(sale.ProductId, sale.Quantity, productBought.RetailPrice, sale.Quantity * productBought.RetailPrice, DateTime.UtcNow);

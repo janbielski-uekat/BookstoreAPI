@@ -1,5 +1,6 @@
 ﻿using BookstoreLibrary.DataAccess;
 using BookstoreLibrary.Models;
+using System.Linq;
 
 namespace BookstoreAPI.Endpoints;
 
@@ -9,6 +10,8 @@ public static class ProductEndpoints
     {
         app.MapGet("/Products", GetProducts);
         app.MapGet("/Products/{id}", GetProduct);
+        app.MapGet("/Products/SearchByName/{name}", GetProductByName);
+        app.MapGet("/Products/SearchByAuthor/{author}", GetProductByAuthor);
         app.MapPost("/Products", InsertProduct);
         app.MapPut("/Products", UpdateProduct);
         app.MapDelete("/Products", DeleteProduct);
@@ -30,6 +33,36 @@ public static class ProductEndpoints
         try
         {
             var results = await data.GetProduct(id);
+            if (results == null) return Results.NotFound();
+            return Results.Ok(results);
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+
+    private static async Task<IResult> GetProductByName(string searchedName, IProductData data)
+    {
+        try
+        {
+            var products = await data.GetProducts();
+            var results = products.Where(p => p.ProductName.ToLower().Contains(searchedName.ToLower()));
+            if (results == null) return Results.NotFound();
+            return Results.Ok(results);
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+
+    private static async Task<IResult> GetProductByAuthor(string searchedAuthor, IProductData data)
+    {
+        try
+        {
+            var products = await data.GetProducts();
+            var results = products.Where(p => p.Author.ToLower().Contains(searchedAuthor.ToLower()));
             if (results == null) return Results.NotFound();
             return Results.Ok(results);
         }
