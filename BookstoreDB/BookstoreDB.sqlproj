@@ -73,11 +73,15 @@
     <Build Include="dbo\StoredProcedures\spProduct_Delete.sql" />
     <Build Include="dbo\StoredProcedures\spProduct_Insert.sql" />
     <Build Include="dbo\StoredProcedures\spProduct_Update.sql" />
+    <Build Include="dbo\Tables\Sale.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BookstoreDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="BookstoreDB.refactorlog" />
   </ItemGroup>
 </Project>
