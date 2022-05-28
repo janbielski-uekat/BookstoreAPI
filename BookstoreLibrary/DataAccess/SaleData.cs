@@ -22,4 +22,5 @@ public class SaleData : ISaleData
 
     public Task InsertSale(SaleModel sale) =>
         _db.SaveData("dbo.spSale_Insert", new { sale.ProductId, sale.Quantity, sale.PurchasePrice, sale.Total, sale.SaleDate });
+    
 }

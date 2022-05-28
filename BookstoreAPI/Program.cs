@@ -1,4 +1,5 @@
 using BookstoreAPI;
+using BookstoreAPI.Endpoints;
 using BookstoreLibrary.DataAccess;
 using DataAccess.DbAccess;
 
@@ -22,6 +23,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.ConfigureApi();
+app.ConfigureUserEndpoints();
+app.ConfigureProductEndpoints();
+app.ConfigureSaleEndpoints();
 
 app.Run();
