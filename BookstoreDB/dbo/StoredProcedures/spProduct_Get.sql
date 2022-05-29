@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[spProduct_Get]
 	@Id int
 AS
-begin
-	select Id, ProductName, [Description], Author, ISBN, RetailPrice, QuantityInStock
-	from dbo.[Product]
-	where Id = @Id;
-end
+BEGIN
+	SELECT Id, ProductName, [Description], Author, ISBN, RetailPrice, QuantityInStock
+	FROM dbo.[Product]
+	WHERE Id = @Id;
+END

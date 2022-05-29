@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[spProduct_Delete]
-	@Id int
+	@Id INT
 AS
-begin
-	delete
-	from dbo.[Product]
-	where Id = @Id;
-end
+BEGIN
+	DELETE
+	FROM dbo.[Product]
+	WHERE Id = @Id;
+END

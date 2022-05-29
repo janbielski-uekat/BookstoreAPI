@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spProduct_GetAll]
 AS
-begin
-	select Id, ProductName, [Description], Author, ISBN, RetailPrice, QuantityInStock
-	from dbo.[Product];
-end
+BEGIN
+	SELECT Id, ProductName, [Description], Author, ISBN, RetailPrice, QuantityInStock
+	FROM dbo.[Product];
+END
