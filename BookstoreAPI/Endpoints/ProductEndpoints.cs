@@ -10,8 +10,8 @@ public static class ProductEndpoints
     {
         app.MapGet("/Products", GetProducts);
         app.MapGet("/Products/{id}", GetProduct);
-        app.MapGet("/Products/SearchByName/{name}", GetProductByName);
-        app.MapGet("/Products/SearchByAuthor/{author}", GetProductByAuthor);
+        app.MapGet("/Products/SearchByName", GetProductByName);
+        app.MapGet("/Products/SearchByAuthor", GetProductByAuthor);
         app.MapPost("/Products", InsertProduct);
         app.MapPut("/Products", UpdateProduct);
         app.MapDelete("/Products", DeleteProduct);

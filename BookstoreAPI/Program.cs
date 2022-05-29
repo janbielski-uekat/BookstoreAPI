@@ -1,4 +1,3 @@
-using BookstoreAPI;
 using BookstoreAPI.Endpoints;
 using BookstoreLibrary.DataAccess;
 using DataAccess.DbAccess;
